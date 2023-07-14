@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercício 5 / 5.2: Apresentar os caracteres de uma string e suas posições</title>
+</head>
+<body>
+
+    <script>
+        var frase=window.prompt("digite uma frase: ");
+        document.write(frase+"<br>");
+        tamanho=frase.length;
+        for (var i=0; i< tamanho;)
+        {
+            document.write("<br>Caractere na posição "+i+" : "+frase.charAt(i));
+            i++;
+        }
+
+        document.write("<br><br>Primeiro caractere: " + frase.charAt(0) + "<br />");
+        document.write("Último caractere: " + frase.charAt(frase.length-1) + "<br />");
+
+/*
+O método charAt() retorna o caractere da posição especificada da string (do
+índice especificado).
+*/
+</script>
+
+<title> Exercício 6: apresentar a data em diversos formatos.</title>
+    <script>
+        hoje=new Date();
+        document.write("<br>Data e hora completa: "+hoje);
+        document.write("<br>Apenas o dia: "+hoje.getDate());
+        document.write("<br>Apenas o mês (0 a 11): "+hoje.getMonth());
+        document.write("<br>Apenas o ano: "+hoje.getFullYear());
+        document.write("<br>Apenas o dia da semana (0 a 6): "+hoje.getDay());
+        document.write("<br>Apenas a hora e minutos:"+hoje.getHours ()+":"+hoje.getMinutes());
+    </script>
+
+<title> Exercício 7: apresenta três funções (botões) para trabalhar com 
+janelas.</title>
+    <script>
+        function abre1()
+        {
+            window.open("http://www.google.com");
+        }
+
+        function abre2()
+        {  
+            window.open("http://www.google.com","simples","width=350,height=400");
+        }
+
+        function abre3()
+        {
+            window.open("http://www.google.com","simples","menubar,scrollbars,width=300,height=200");
+        }
+    </script>
+
+<form>
+    <br>Dê um clique no botão para abrir uma janela simples: 
+    <input type="button" name="abrir" value="Janela1" onClick="abre1()"><br><br>
+
+    Dê um clique no botão para abrir uma janela de 350px de largura por 400px de
+    altura, sem barras e menus:
+    <input type="button" name="abrir" value="Janela2" onClick="abre2()"><br><br>
+
+    Dê um clique no botão para abrir uma janela com menu e barra de rolagens,
+    mas sem barra de endereço e barra padrão:
+    <input type="button" name="abrir" value="Janela3" onClick="abre3()"><br><br>
+    </form>
+
+<title> Exercício 8: exibe uma caixa de mensagem na abertura do documento HTML
+e, depois do usuário clicar no botão OK, a mesma rotina em JS imprime uma frase
+na página HTML.
+    </title>
+    <script>
+        alert("Esta caixa de dialogo foi construida em JS.");
+        document.write("Esta linha tb foi escrita em JS.<br>");
+    </script>    
+    <body>
+        <br> Esta linha foi escrita em HTML.
+    </body>
+        
+<head><title> Exercício 9: apresenta o quadrado de um número já informado 
+internamente e, em seguida, em uma caixa de texto, permite que você informe um 
+número para saber seu valor ao cubo.</title>
+
+    <script>
+        function quadrado(x)
+        {
+            document.write(x*x);
+        }
+
+        function cubo(x)
+        {
+            return x*x*x
+        }
+    
+        y=5; 
+        document.write("O quadrado de "+ y +" é igual a ");
+        quadrado(y);
+    </script>
+
+<body>
+    <form>
+        <br>Informe um número para saber seu valor ao cubo e, em seguida, 
+        pressione a tecla TAB ou dê um clique fora da caixa de texto.<br>
+        <input type ="text" name="aocubo" value="" onBlur ="alert('O cubo de '+this.value+' é '+cubo(this.value))">
+    </form>
+
+        <!--O evento onblur ocorre quando um objeto perde o foco.-->
+</body>
+</head>
+
+<head>
+<title> Exercício 10: imprime o nome atual da barra de título do browser.</title>
+</head>
+
+    <body>
+
+    <script>
+        document.write("<br>Título da janela aberta: "+document.title+ "<br>");
+    </script>
+
+    </body>
+
+<head>
+<title> Exercício 11: faz uma pergunta específica e apresenta algumas respostas 
+em forma de botões.</title></head>
+
+    <body>
+
+    <form>
+        <br>Pergunta: Quantos anos tem um século?<br>
+        <input type="button" value="a" onclick="alert('A: Volte para 1a série!')"> 10 anos <br>
+        <input type="button" value="b" onclick="alert('B: Correto!')"> 100 anos <br>
+        <input type="button" value="c" onclick="alert('C: MEU DEUS!!!')"> 1000 anos <br>
+        <input type="button" value="d" onclick="alert('D: Não dá para arriscarnada?!?!')"> Não sei <br>
+    </form>
+</body>
+    
+<head>
+<title> Exercício 12: cria 2 funções em JS que permitem somar ou multiplicar 
+valores informados em 3 caixas de texto.</title>
+
+    <script>
+        function soma()
+        {
+            x=eval(document.prova.c1.value)+eval(document.prova.c2.value)+eval(document.prova.c3.value);
+            document.prova.c4.value=x;
+        }
+
+        function multiplica()
+        {
+            y=eval(document.prova.c1.value)*eval(document.prova.c2.value)*eval(document.prova.c3.value);
+            document.prova.c4.value=y;
+        }
+    </script>   
+</head>
+
+<body>
+    <form name="prova">
+        <br>Entre com os valores nos campos e dê um clique nos botões. <br><br> 
+        Valor1: <input type="text" name="c1" value="" size=5 maxlength=5><br> 
+        Valor2: <input type="text" name="c2" value="" size=5 maxlength=5><br> 
+        Valor3: <input type="text" name="c3" value="" size=5 maxlength=5><br>
+        <br>
+        <input type="button" value="Somar" onclick="soma()">
+        <input type="button" value="Multiplicar" onclick="multiplica()">
+        <br><br>
+        Resposta: <input type="text" name="c4" value="" size=10 maxlength=0>
+    </form>
+
+<!--
+O eval () é uma função que avalia ou executa um argumento. Se o argumento for uma 
+expressão, eval () avalia a expressão. Se o argumento for uma ou mais declarações 
+JavaScript, eval () executa as instruções.
+-->
+
+</body>
+
+<head><title> Exercício 13: apresenta campos para preenchimento, sendo que alguns são obrigatórios.</title>
+<head>
+    <script>
+         function campo_obrigatorio(x)
+         {
+            if(x.value=="")
+            {
+                alert("O campo " + x.name + " não pode ficar em branco.")
+            }
+         }
+    </script>
+</head>
+<body>
+    <br>Nota: os campos marcados com asterisco são obrigatórios. <br>
+<form>
+    *Nome Completo: <input type="text" name="nome" value="" size=30 maxlength=30 onblur="campo_obrigatorio(this)"><br>
+    Idade: <input type="text" name="idade" value="" size=5 maxlength=5><br>
+    *Cidade: <input type="text" name="cidade" value="" size=20 maxlength=20 onblur="campo_obrigatorio(this)"><br>
+    Telefone: <input type="text" name="telefone" value="" size=15 maxlength=15><br>
+    </form>
+    </body>
+
+<head><title> Exercício 14: trocar figura passando o mouse.</title>
+    <script language="JavaScript"> 
+    function mouseEmCima(imagem)
+        {
+            imagem.src="Foto1.jpg";
+        }
+    function mouseFora(imagem)
+        {
+            imagem.src="Foto2.jpg";
+        }
+    </script>
+</head>
+<body>
+    <br>Passe o mouse sobre a imagem: <br>
+    <img src="Foto2.jpg" onclick="mouseEmCima(this)" width="300" height="300" >
+    <br><br>
+    1) Agora padronize os tamanhos das imagens. <br><br>
+
+    2) Mude o evento para que as imagens sejam trocadas ao "clicar" com o mouse.
+
+    <!--
+    width="300" height="300" : dentro da tag img src 
+    onclick="mouseEmCima(this)" 
+    onMouseOver="mouseEmCima(this)"
+    -->
+</body>
+
+    <head>
+<title> Exercício 15: saudações ao usuário.</title>
+    </head>
+    <body>
+
+    <script language="JavaScript"> 
+    var dia = new Date();
+    var hora = dia.getHours();
+    var minuto = dia.getMinutes();
+    if ((hora==1)||(hora==2)||(hora==3)||(hora==4) || (hora==5)) document.write( "Você não devia estar dormindo?");
+    if ((hora==6) || (hora==7) || (hora==8) || (hora==9) || (hora==10)|| (hora==11)) document.write( "Bom dia!");
+    if (hora==12) document.write( "Vamos almoçar?");
+    if ((hora==13) || (hora==14) || (hora==15) || (hora==16) || (hora==17)) document.write( "Boa Tarde!");
+    if ((hora==18) || (hora==19)) document.write( "Bom final de tarde!"); 
+    if ((hora==20) || (hora==21) || (hora==22)) document.write( "Boa noite!"); 
+    if (hora==23) document.write( "Ó Meu! Já é quase meia-noite!");
+    if (hora==0) document.write( "Meia-noite! Já é amanhã!");
+    </script>
+
+    <br><br>
+    <!--
+    Agora você deve acrescentar os seguintes testes:<br><br>
+
+    1) Mensagem "Vamos para aula!" quando for 19:30 <br>
+    2) Mensagem "Hora do RECREIO!" quando for 20:50 <br>
+    3) Mensagem "Vamos embora, a aula terminou!" quando for 22:30 <br>
+            -->
+    </body>
+
+<head><title> Exercício 16: saudações ao usuário com figuras.</title></head>
+
+    <body>
+    <script language="JavaScript">
+
+    dia = new Date() 
+    hora = dia.getHours()
+
+    if (hora < 18) {
+        document.write('<img src= "figura1.jpg ">');
+    }
+    else {
+        document.write('<img src= "figura2.jpg ">');
+    }
+    </script>
+
+    <br><br> blablabla <br><br>
+
+    </body>
+    </html>
